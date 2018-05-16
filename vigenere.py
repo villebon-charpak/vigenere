@@ -61,17 +61,21 @@ assert unvigenere('Fj"pjuvfih%c#îvì%eknhiwë#fxhh"oj"fmkikth%fh%Xllgqíth%gq%w
 
 # La question que l'on peut désormais se poser est de déchiffrer un message chiffré dont on ne connait pas la clé. Admettons dans un premier temps que l'on connaisse la longueur de la clé. Nous avions vu que pour le chiffre de César, il était possible de deviner la clé (le décalage) de plusieurs moyens : essais par force brute, analyse de fréquences. Le chiffre de Vigenère possède la même faiblesse : dès lors qu'on connaît la longueur de la clé, il ne reste plus qu'à faire des analyses de fréquences sur chacune des portions de message qui ont été chiffrées avec le même décalage.
 
-# Pour aborder les analyses de fréquences, il peut être utile de faire quelques rappels sur une structure de données en Python qui s'appelle un dictionnaire (*dictionnary* en anglais). Un dictionnaire (aussi parfois appelée tableau associatif) est une structure de donnée similaire à un tableau de valeurs, mais dans lequel les indices ne sont pas pas nécessairement des entiers (ils peuvent par exemple être des chaines de caractères). Les indices sont appelées des clés (*key* en anglais). On peut définir un dictionnaire entre accolades.
+# Pour aborder les analyses de fréquences, il peut être utile de faire quelques rappels sur une structure de données en Python qui s'appelle un dictionnaire (*dictionnary* en anglais). Un dictionnaire (aussi parfois appelée tableau associatif) est une structure de donnée similaire à un tableau de valeurs, mais dans lequel les indices ne sont pas pas nécessairement des entiers consécutifs (ils peuvent par exemple être des chaines de caractères). Les indices sont appelées des clés (*key* en anglais). On peut définir un dictionnaire entre accolades.
 
 
-mon_dictionnaire = {"chat" : "cat", "chien" : "dog", "oiseau" : "bird",  "poisson" : "fish"}
+mon_dictionnaire = {"chien" : "dog", "oiseau" : "bird",  "poisson" : "fish", "chat" : "kitty cat"}
 
-# On peut lire ou modifier une valeur du dictionnaire en utilisant une syntaxe similaire à celle pour un tableau
+# On peut lire, modifier ou ajouter une valeur du dictionnaire en utilisant une syntaxe similaire à celle pour un tableau
 
-
-mon_dictionnaire["chat"] = "kitty cat"
+mon_dictionnaire["chat"] = "cat" # modifier une valeur
+mon_dictionnaire["ornithorynque"] = "platypus"
 print(mon_dictionnaire)
 
+# Pour parcourir un dictionnaire, on peut utiliser une boucle for avec la syntaxe suivante
+
+for cle in mon_dictionnaire:
+    print("la traduction en anglais de " + cle + " est " + mon_dictionnaire[cle])
 
 #####
 # 3 #

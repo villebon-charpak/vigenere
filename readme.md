@@ -38,19 +38,34 @@ Admettons dans un premier temps que l'on connaisse la longueur de la clé. Nous 
 
 ### Dictionnaire en Python
 
-Pour aborder les analyses de fréquences, il peut être utile de faire quelques rappels sur une structure de données en Python qui s'appelle un dictionnaire (*dictionnary* en anglais). Un dictionnaire (aussi parfois appelée tableau associatif) est une structure de donnée similaire à un tableau de valeurs, mais dans lequel les indices ne sont pas pas nécessairement des entiers (ils peuvent par exemple être des chaines de caractères). Les indices sont appelées des clés (*key* en anglais). On peut définir un dictionnaire entre accolades.
+Pour aborder les analyses de fréquences, il peut être utile de faire quelques rappels sur une structure de données en Python qui s'appelle un dictionnaire (*dictionnary* en anglais). Un dictionnaire (aussi parfois appelée tableau associatif) est une structure de donnée similaire à un tableau de valeurs, mais dans lequel les indices ne sont pas pas nécessairement des entiers consécutifs (ils peuvent par exemple être des chaines de caractères). Les indices sont appelées des clés (*key* en anglais). On peut définir un dictionnaire entre accolades.
 
 ```python
 mon_dictionnaire = {"chat" : "cat", "chien" : "dog", "oiseau" : "bird",  "poisson" : "fish"}
 ```
 
-On peut lire ou modifier une valeur du dictionnaire en utilisant une syntaxe similaire à celle pour un tableau
+On peut lire, modifier ou ajouter une valeur du dictionnaire en utilisant une syntaxe similaire à celle pour un tableau
+
 
 ```python
-mon_dictionnaire["chat"] = "kitty cat"
+mon_dictionnaire["chat"] = "cat" # modifier une valeur
+mon_dictionnaire["ornithorynque"] = "platypus"
 print(mon_dictionnaire)
 ```
 
+Pour parcourir un dictionnaire, on peut utiliser une boucle for avec la syntaxe suivante
+
+```python
+for cle in mon_dictionnaire:
+    print("la traduction en anglais de " + cle + " est " + mon_dictionnaire[cle])
+```
+
+La méthode `keys()` permet d'obtenir la liste des clés d'un dictionnaire
+
+```python
+animaux = mon_dictionnaire.keys()
+print(animaux) # ['chien', 'oiseau', 'poisson', 'chat', 'ornithorynque']
+```
 ### Question 3
 
 *Niveau 2 :* Programmer une fonction `frequence(texte)` qui prend en argument une chaine de caractères et retourne un dictionnaire contenant le nombre de fois que chaque caractère apparait dans la chaine de caractère. Par exemple dans la chaine `'bienvenue'`, le caractère `'b'` apparait 1 fois, le caractère `'i'` apparait 1 fois, le caractère `'e'` apparait 3 fois, le caractère `'n'` apparait 2 fois, le caractère `'n'` apparait 2 fois, le caractère `'v'` apparait 1 fois, et le caractère `'u'` apparait 1 fois. La fonction `frequence('bienvenue')` devrait donc répondre le dictionnaire
