@@ -7,7 +7,7 @@ Le but de cette activité est d'écrire un programme pour chiffrer et déchiffre
 
 Commençons par expliquer le principe du chiffre de Vigenère. Comme pour le chiffre de César, le principe va être d'effectuer un décalage des lettres mais ce décalage ne sera pas le même selon la position de la lettre dans le message original, il va en dépendre périodiquement selon un motif que l'on appelle la clé.
 
-Prenons un exemple, admettons que l'on veuille chiffrer le message `'monmessagesecret'`, on choisit la clé `[1,4,3]`. Cela signifie qu'on va effectuer des décalages de 1,4,3,1,4,3,1,4,3, etc. Ainsi la première lettre `m` est décalée de 1, ce qui donne `n`, la seconde lettre `o` est décalée de 4, ce qui donne `s`, la troisième lettre `n` est décalée de 3, ce qui donne `q`, la quatrième `m` est à nouveau décalée de 1, ce qui donne `n` et ainsi de suite. Le message chiffré est au final `'nsqnivtejfwhdvhu'`, on peut visualiser cela dans le tableau suivant.
+Prenons un exemple, admettons que l'on veuille chiffrer le message `'monmessagesecret'`, on choisit la clé `[1,4,3]`. Cela signifie qu'on va effectuer des décalages de 1,4,3,1,4,3,1,4,3, etc. Ainsi la première lettre `m` est décalée de 1, ce qui donne `n`, la seconde lettre `o` est décalée de 4, ce qui donne `s`, la troisième lettre `n` est décalée de 3, ce qui donne `q`, la quatrième `m` est à nouveau décalée de 1, ce qui donne `n` et ainsi de suite. Le message chiffré est au final `'nsqnivtejfwhdvhu'`, on peut visualiser cela dans le tableau suivant :
 
 
 
@@ -93,4 +93,8 @@ print("chien" in mon_dictionnaire) # True
 
 ## Deviner la longueur de la clé
 
-Il s'agit là de la partie la plus délicate et soumise à la chance mais il est bien souvent possible de deviner la longeur de la clé, pourvue que celle-ci soit assez courte et que le message soit assez long. L'idée repose sur le fait de chercher des séquence de symboles qui se répètent dans le message chiffré.
+*Niveau 4* : Il s'agit là de la partie la plus délicate et soumise à la chance mais il est bien souvent possible de deviner la longeur de la clé, pourvue que celle-ci soit assez courte et que le message soit assez long. L'idée repose sur le fait de chercher des séquence de symboles qui se répètent dans le message chiffré. Pourrez-vous déchiffrer le message suivants ?
+
+```python
+message_secret = '#Pk#gnljlui&gi&Ymmhrîui&hwz#yt#w\x7fvxîpi&gi&floijxhqkqx&ssr|erslgeízlu{h0&f”kvx&xr&floijxhqkqx&sex#w{ewzlx{wmuq0&peov${qi&pîsh$rhxzui&gy&piyvemh$ioeou$vhyz/$yxm|drz#wg#tuvmzlst#hgqw&firxm3fm2#îzui&uisspgfík#tgu$jhw&oizwvkv$jljlìvkqxkv0&fstwvglvkpitw$æ#yt#w\x7fvxîpi&gi&floijxhqkqx&pstrerslgeízlu{h$irqsh$rh$ikmlivk#hk#Gïvex#,wx+oo${wmrlwk#gksitgetw$irqsh$irqvrwgqx/1$Ihxzh$sìxnrhk#vïvmywi&dmtvm&ã$r*etdp\x7fvi&gi&ivïtykqgkv0&fi&tyo#iyw${q$gyetwemh$jìgovml#w{u$rhw&floijxhqkqxy#quqsgotndfïwmwxiy1$Ihtkqhgqx&oi&floijxh$jh$\\lkkqìxh$g#ízì$vhviì$vdv&oi&peprv&sv{vwohr&Ivohhxlgn#Ogvmynm&tyo#e&syhomï#wg#qïwlugi&hr&4<<62&Lp&q“uijxh$voyy#hksyov$ihxzh$ïsswxi&dyixrk#wïfyxlxï1\x0e\x10Lp&hwz#rupqï#eoqwo#e{#|o{i&vmîfpk#it#vïiíxhrih$gx$jltrrqgwi&gy&{zoh$ylìioi&Epglwk#hk#Zojitëvk/$wxm&oi&gíiumz#,oqxïjvï#ä&xr&floijxhqkqx&sp{v$irqvoi~h-&getv$yrr&wvglxï#hkv$ikmlivkv$vdv{#it#5;;:4#St#xxry|h$kq$ldmz#hïmä&xrk#qïwlugi&gi&floijxhqkqx&drgosmxi&getv${q$iryxw$zueowí&gi&Jmuyet#Fgwxovxg#Fkopgvs&sexx$kq$78791'
+```
