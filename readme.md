@@ -28,12 +28,12 @@ Prenons un exemple, admettons que l'on veuille chiffrer le message `'monmessages
 
 Une fois que l'on a programmé notre fonction de chiffrage et déchiffrage, nous possédons un moyen d'échanger des communications chiffrées entre deux personnes. Pour cela, il suffit de se mettre d'accord au préalable sur une clé secrète, et chacun peut envoyer une recevoir des messages en utilisant les fonctions `vigenere(message, cle)` et `dechiffre_vigenere(message, cle)`. Mais on peut se demander si ce protocole de communication est bien sécurisé. Supposons qu'une personne qui ne connaisse pas la clé secrète intercepte le message chiffré. Peut-elle deviner le message original ?
 
-La question qui se pose donc est de déchiffrer un message chiffré dont on ne connait pas la clé. Il suffirait de deviner la clé pour y arriver.
+La question qui se pose donc est de déchiffrer un message chiffré dont on ne connait pas la clé. Il suffirait de deviner la clé pour y arriver, ce qui est souvent possible en pratique. Procédons par étape pour s'en apperçevoir.
 
 ## Anaylse de fréquence
 
 
-Admettons dans un premier temps que l'on connaisse la longueur de la clé. Nous avions vu que pour le chiffre de César, il était possible de deviner la clé (le décalage) de plusieurs moyens : essais par force brute, analyse de fréquences.
+Admettons dans un premier temps que l'on connaisse la longueur de la clé. Nous avions vu que pour le chiffre de César, il était possible de deviner la clé (le décalage) de plusieurs moyens : essais par force brute, analyse de fréquences. Le chiffre de Vigenère possède la même faiblesse : dès lors qu'on connaît la longueur de la clé, il ne reste plus qu'à faire des analyses de fréquences sur chacune des portions de message qui ont été chiffrées avec le même décalage.
 
 
 ### Question 3
@@ -53,3 +53,7 @@ Admettons dans un premier temps que l'on connaisse la longueur de la clé. Nous 
 ### Question 6
 
 *Niveau 3 :* Programmer une fonction `deviner_cle_vigenere(message, longueur)` qui prend en arguments le message chiffré (une chaine de caractère) et une longueur possible de clé (un entier) et retourne la clé la plus probable en utilisant une analyse de fréquence (liste d'entier).
+
+## Deviner la longueur de la clé
+
+Il s'agit là de la partie la plus délicate et soumise à la chance mais il est bien souvent possible de deviner la longeur de la clé, pourvue que celle-ci soit assez courte et que le message soit assez long. L'idée repose sur le fait de chercher des séquence de symboles qui se répètent dans le message chiffré.
