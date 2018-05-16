@@ -76,6 +76,12 @@ print(mon_dictionnaire)
 
 for cle in mon_dictionnaire:
     print("la traduction en anglais de " + cle + " est " + mon_dictionnaire[cle])
+    
+# Pour vérifier si un élément fait partie des clés du dictionnaire, il suffit d'utiliser la condition in, le résultat de l'expression est True ou False.
+
+
+print("papillon" in mon_dictionnaire)   # False
+print("chien" in mon_dictionnaire)      # True
 
 #####
 # 3 #
