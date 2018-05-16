@@ -4,6 +4,13 @@
 
 # le but de cette activité est d'écrire un programme pour chiffrer et déchiffrer des messages en utilisant le chiffrement de Vigenère. Reportez-vous au fichier readme pour plus d'explications.
 
+
+
+
+################################
+# Chiffrement et déchiffrement #
+################################
+
 #####
 # 1 #
 #####
@@ -19,9 +26,9 @@ def vigenere(message, cle):
     
     pass # remplacer cette ligne par votre code
 
-# test (décommenter pour tester)
-# assert vigenere("monmessagesecret", [1,4,3]) == "nsqnivtejfwhdvhu"
-    
+# tests (décommenter pour tester)
+# assert vigenere("monmessagesecret", [1,4,3])  == "nsqnivtejfwhdvhu"
+# assert vigenere("unautreessai", [2,3])        == "wqcxvughuvcl" 
 
 #####
 # 2 #
@@ -39,14 +46,31 @@ def dechiffre_vigenere(message, cle):
     pass # remplacer cette ligne par votre code
 
 # test (décommenter pour tester)
-# assert vigenere("nsqnivtejfwhdvhu", [1,4,3]) == "monmessagesecret"
+# assert dechiffre_vigenere("nsqnivtejfwhdvhu", [1,4,3]) == "monmessagesecret"
+# assert dechiffre_vigenere("Fj"pjuvfih%c#îvì%eknhiwë#fxhh"oj"fmkikth%fh%Xllgqíth%gq%wwnnlxcqy"of"fqë#`5/:.5b0", [3,5,2]) == "Ce message a été chiffré avec le chiffre de Vigenère en utilisant la clé [3,5,2]."
+
+assert unvigenere('Fj"pjuvfih%c#îvì%eknhiwë#fxhh"oj"fmkikth%fh%Xllgqíth%gq%wwnnlxcqy"of"fqë#`5/:.5b0', [3,5,2]) == "Ce message a été chiffré avec le chiffre de Vigenère en utilisant la clé [3,5,2]."
+
+
+
 
     
 ################
 # Cryptanalyse #
 ################
 
-# La question que l'on peut désormais se poser est de déchiffrer un message chiffré dont on ne connait pas la clé.
+# La question que l'on peut désormais se poser est de déchiffrer un message chiffré dont on ne connait pas la clé. Admettons dans un premier temps que l'on connaisse la longueur de la clé. Nous avions vu que pour le chiffre de César, il était possible de deviner la clé (le décalage) de plusieurs moyens : essais par force brute, analyse de fréquences. Le chiffre de Vigenère possède la même faiblesse : dès lors qu'on connaît la longueur de la clé, il ne reste plus qu'à faire des analyses de fréquences sur chacune des portions de message qui ont été chiffrées avec le même décalage.
+
+# Pour aborder les analyses de fréquences, il peut être utile de faire quelques rappels sur une structure de données en Python qui s'appelle un dictionnaire (*dictionnary* en anglais). Un dictionnaire (aussi parfois appelée tableau associatif) est une structure de donnée similaire à un tableau de valeurs, mais dans lequel les indices ne sont pas pas nécessairement des entiers (ils peuvent par exemple être des chaines de caractères). Les indices sont appelées des clés (*key* en anglais). On peut définir un dictionnaire entre accolades.
+
+
+mon_dictionnaire = {"chat" : "cat", "chien" : "dog", "oiseau" : "bird",  "poisson" : "fish"}
+
+# On peut lire ou modifier une valeur du dictionnaire en utilisant une syntaxe similaire à celle pour un tableau
+
+
+mon_dictionnaire["chat"] = "kitty cat"
+print(mon_dictionnaire)
 
 
 #####
@@ -56,6 +80,10 @@ def dechiffre_vigenere(message, cle):
 # Niveau 2 : Programmer une fonction frequence(texte) qui prend en argument une chaine de caractères et retourne un dictionnaire contenant le nombre de fois que chaque caractère apparait dans la chaine de caractère. Par exemple dans la chaine 'bienvenue', le caractère 'b' apparait 1 fois, le caractère 'i' apparait 1 fois, le caractère 'e' apparait 3 fois, le caractère 'n' apparait 2 fois, le caractère 'n' apparait 2 fois, le caractère 'v' apparait 1 fois, et le caractère 'u' apparait 1 fois. La fonction frequence('bienvenue') devrait donc repondre le dictionnaire
 
 def frequence(texte):
+    # arguments :
+    #       texte : chaine de caractère
+    # retourne un dictionnaire contenant, pour chaque caractère de la chaine texte, le nombre de fois que celui-ci apparait dans la chaine
+    
     pass
 
 # test (décommenter pour tester)

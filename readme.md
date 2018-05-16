@@ -1,7 +1,7 @@
 # Chiffre de Vigenère
 
 
-le but de cette activité est d'écrire un programme pour chiffrer et déchiffrer des messages en utilisant le chiffrement de Vigenère. Cette activité se construit sur la précédente autour des chaines de caractères et du chiffre de césar.
+Le but de cette activité est d'écrire un programme pour chiffrer et déchiffrer des messages en utilisant le chiffrement de Vigenère. Cette activité se construit sur la précédente autour des chaines de caractères et du chiffre de césar.
 
 ## Principe du chiffre de Vigenère
 
@@ -13,6 +13,7 @@ Prenons un exemple, admettons que l'on veuille chiffrer le message `'monmessages
 |message original|m|o|n|m|e|s|s|a|g|e|s|e|c|r|e|t|
 |décalage        |1|4|3|1|4|3|1|4|3|1|4|3|1|4|3|1|
 |message chiffré |n|s|q|n|i|v|t|e|j|f|w|h|d|v|h|u|
+
 
 
 ### Question 1
@@ -35,6 +36,20 @@ La question qui se pose donc est de déchiffrer un message chiffré dont on ne c
 
 Admettons dans un premier temps que l'on connaisse la longueur de la clé. Nous avions vu que pour le chiffre de César, il était possible de deviner la clé (le décalage) de plusieurs moyens : essais par force brute, analyse de fréquences. Le chiffre de Vigenère possède la même faiblesse : dès lors qu'on connaît la longueur de la clé, il ne reste plus qu'à faire des analyses de fréquences sur chacune des portions de message qui ont été chiffrées avec le même décalage.
 
+### Dictionnaire en Python
+
+Pour aborder les analyses de fréquences, il peut être utile de faire quelques rappels sur une structure de données en Python qui s'appelle un dictionnaire (*dictionnary* en anglais). Un dictionnaire (aussi parfois appelée tableau associatif) est une structure de donnée similaire à un tableau de valeurs, mais dans lequel les indices ne sont pas pas nécessairement des entiers (ils peuvent par exemple être des chaines de caractères). Les indices sont appelées des clés (*key* en anglais). On peut définir un dictionnaire entre accolades.
+
+```python
+mon_dictionnaire = {"chat" : "cat", "chien" : "dog", "oiseau" : "bird",  "poisson" : "fish"}
+```
+
+On peut lire ou modifier une valeur du dictionnaire en utilisant une syntaxe similaire à celle pour un tableau
+
+```python
+mon_dictionnaire["chat"] = "kitty cat"
+print(mon_dictionnaire)
+```
 
 ### Question 3
 
