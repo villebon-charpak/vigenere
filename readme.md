@@ -10,10 +10,10 @@ Commençons par expliquer le principe du chiffre de Vigenère. Comme pour le chi
 Prenons un exemple, admettons que l'on veuille chiffrer le message `'monmessagesecret'`, on choisit la clé `[1,4,3]`. Cela signifie qu'on va effectuer des décalages de 1,4,3,1,4,3,1,4,3, etc. Ainsi la première lettre `m` est décalée de 1, ce qui donne `n`, la seconde lettre `o` est décalée de 4, ce qui donne `s`, la troisième lettre `n` est décalée de 3, ce qui donne `q`, la quatrième `m` est à nouveau décalée de 1, ce qui donne `n` et ainsi de suite. Le message chiffré est au final `'nsqnivtejfwhdvhu'`, on peut visualiser cela dans le tableau suivant :
 
 
-
-|message original|m|o|n|m|e|s|s|a|g|e|s|e|c|r|e|t|
-|décalage        |1|4|3|1|4|3|1|4|3|1|4|3|1|4|3|1|
-|message chiffré |n|s|q|n|i|v|t|e|j|f|w|h|d|v|h|u|
+| message original | m | o | n | m | e | s | s | a | g | e | s | e | c | r | e | t |
+| -----------------|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| décalage         | 1 | 4 | 3 | 1 | 4 | 3 | 1 | 4 | 3 | 1 | 4 | 3 | 1 | 4 | 3 | 1 |
+| message chiffré  | n | s | q | n | i | v | t | e | j | f | w | h | d | v | h | u |
 
 
 
