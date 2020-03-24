@@ -32,7 +32,7 @@ Une fois que l'on a programmé notre fonction de chiffrage et déchiffrage, nous
 
 La question qui se pose donc est de déchiffrer un message chiffré dont on ne connait pas la clé. Il suffirait de deviner la clé pour y arriver, ce qui est souvent possible en pratique. Procédons par étape pour s'en apperçevoir.
 
-## Anaylse de fréquence
+## Analyse de fréquence
 
 
 Admettons dans un premier temps que l'on connaisse la longueur de la clé. Nous avions vu que pour le chiffre de César, il était possible de deviner la clé (le décalage) de plusieurs moyens : essais par force brute, analyse de fréquences. Le chiffre de Vigenère possède la même faiblesse : dès lors qu'on connaît la longueur de la clé, il ne reste plus qu'à faire des analyses de fréquences sur chacune des portions de message qui ont été chiffrées avec le même décalage.
